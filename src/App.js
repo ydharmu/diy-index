@@ -103,7 +103,11 @@ const App = () => {
 
   return (
     <div className="p-6 max-w-6xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6 text-center text-blue-800">DIY Index Builder</h1>
+      <div className="flex items-center gap-4 mb-4">
+		<img src="/diy-index-logo.png" alt="DIY Index Logo" className="w-24 h-24" />
+		<span className="text-2xl font-bold text-green-600">DIY Index</span>
+	  </div>
+
 
       <div className="flex flex-wrap items-center gap-4 mb-0">
         <div className="flex items-center gap-2">

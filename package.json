@@ -10,9 +10,7 @@
     "recharts": "^2.15.2"
   },
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "client": "react-scripts start",
-    "server": "cd ../nse-proxy-server && node index.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -37,8 +35,5 @@
   },
   "overrides": {
     "eslint": "^8.57.0"
-  },
-  "devDependencies": {
-    "concurrently": "^9.1.2"
   }
 }
