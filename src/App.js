@@ -13,7 +13,7 @@ const App = () => {
   const fetchIndexWithInvestment = async (indexName, amount) => {
     try {
       setLoading(true);
-      const res = await axios.get(`http://localhost:5000/api/indices/${indexName}?amount=${amount}`);
+      const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/indices/${indexName}?amount=${amount}`);
       setSelectedIndex(res.data);
       setLoading(false);
     } catch (err) {
@@ -24,7 +24,7 @@ const App = () => {
 
   const fetchIndicesList = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/indices');
+      const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/indices`);
       setIndices(res.data);
       if (res.data.length > 0) {
         setSelectedIndexName(res.data[0].name);
@@ -129,13 +129,6 @@ const App = () => {
             onChange={(e) => setInvestment(Number(e.target.value))}
           />
         </div>
-
-        <button
-          onClick={handlePurchase}
-          className="ml-4 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
-        >
-          Purchase
-        </button>
       </div>
 
       <div className="text-sm text-gray-700 mt-1 mb-4 ml-[180px] italic">
